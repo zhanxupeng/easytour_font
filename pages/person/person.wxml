@@ -1,0 +1,36 @@
+<view class='page-container'>
+  <!--背景图片需要转化为base64码 http://imgbase64.duoshitong.com/ -->
+  <view class='unlogin-container' wx:if='{{unLoginShow}}'>
+    <view class='unlogin-title-container'>
+      <text class='unlogin-title-class'>欢迎光临安行</text>
+    </view>
+    <view class='login-register-container'>
+      <button size='mini' type="primary" class='login-button' bindtap='login'>登录</button>
+      <button size='mini' type="primary" class='register-button' bindtap='register'>注册</button>
+    </view>
+  </view>
+  <view class='person-container' wx:if='{{inLoginShow}}'>
+    <view class='in-person-container'>
+      <view class='head-image-container'>
+        <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Chead.jpg' class='head-image'></image>
+      </view>
+      <view class='info-container'>
+        <view class='nickname-container'>
+          <text>{{userInfo.nickName}}</text>
+        </view>
+        <view class='username-container'>
+          <text>账号:{{userInfo.userName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='list-container'>
+    <view wx:for="{{functionList}}" wx:for-index="idx" wx:for-item="functionItem" class='item-container' bindtap='{{functionItem.clickFunction}}' data-index='{{idx}}'>
+      <image src='{{functionItem.imageUrl}}' class='icon-image'></image>
+      <text class='function-item-description-class'>{{functionItem.description}}</text>
+      <view class='arrow-container'>
+        <text class='arrow-class'>></text>
+      </view>
+    </view>
+  </view>
+</view>

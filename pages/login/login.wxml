@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='logo-container'>
+    <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Clogo.png' class='login-image'></image>
+  </view>
+  <view>
+    <!-- <view class='input-container'>
+      <input maxlength="10" placeholder="账号" style='background:white;' maxlength='15' focus type='number'/>
+      <input maxlength="10" placeholder="密码" style='background:white;' password='true' maxlength='21'/>
+    </view> -->
+    <form bindsubmit="userLogin">
+      <view class='search'>
+        <view class='searchItem'>
+          <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5CloginId.png' />
+          <input placeholder='请输入账号' maxlength='15' focus type='number' name='userName' bindblur='userNameBlur'></input>
+        </view>
+      </view>
+      <view class='search'>
+        <view class='searchItem'>
+          <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Cpassword.png' />
+          <input placeholder='请输入密码' password='true' maxlength='21' name='password' bindinput='passwordBindinput'></input>
+        </view>
+      </view>
+      <view class='login-button-container'>
+        <button type='primary' class='login-button' formType="submit" disabled='{{loginDisabled}}'>登录</button>
+      </view>
+    </form>
+  </view>
+</view>

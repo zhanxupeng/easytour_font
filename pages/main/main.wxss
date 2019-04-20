@@ -1,0 +1,43 @@
+swiper{
+  width: 100%;
+  height: 340rpx;
+}
+swiper image{
+  width:100%;
+  height: 100%;
+}
+.title-list-container{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 150rpx;
+  display:flex;
+}
+.title-container{
+  width: 20%;
+  flex:1;
+}
+.title-content-container{
+  width:80%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+.title-image{
+  height:110rpx;
+  width:100%;
+  border-radius: 55rpx;
+  background: #eee;
+}
+.title-style{
+  width:100%;
+  font-size: 20rpx;
+  font-style: bold;
+}
+.recommend-container{
+  margin-top: 30rpx;
+  width:100%;
+}
+.recommend-image{
+  width: 100%;
+}

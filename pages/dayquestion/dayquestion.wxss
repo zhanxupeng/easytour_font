@@ -1,0 +1,17 @@
+/* pages/dayquestion/dayquestion.wxss */
+.question-title{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.button-container{
+  margin: 30rpx 20rpx 0 20rpx;
+  text-align: center;
+}
+.question-image{
+  width:100%;
+}
+.radio {
+    margin-left: 150rpx;
+    display: block;
+    padding: 5px;
+}

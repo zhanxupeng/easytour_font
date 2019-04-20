@@ -1,0 +1,37 @@
+<view>
+  <view class='logo-container'>
+    <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Clogo.png' class='login-image'></image>
+  </view>
+  <form bindsubmit="userRegister">
+    <view class='form-item-container'>
+      <text class='form-item-label'>账号: </text>
+      <input class='form-item-value' placeholder='请输入账号' maxlength='15' focus type='number' name='userName' bindinput='userNameInput'></input>
+    </view>
+    <view class='form-item-container'>
+      <text class='form-item-label'>密码: </text>
+      <input class='form-item-value' placeholder='请输入密码' maxlength='15' password='true' name='password' bindinput='passwordInput'></input>
+    </view>
+    <view class='form-item-container'>
+      <text class='form-item-label'>确认密码: </text>
+      <input class='form-item-value' placeholder='请确认密码' maxlength='15' password='true' name='rePassword' bindinput='rePasswordInput'></input>
+    </view>
+    <view class='form-item-container'>
+      <text class='form-item-label'>昵称: </text>
+      <input class='form-item-value' placeholder='请输入昵称' maxlength='15' name='nickName' bindinput='nicknameInput'></input>
+    </view>
+    <view class='form-item-container'>
+      <text class='form-item-label'>性别: </text>
+      <view class='form-item-value'>
+        <radio-group bindchange='sexChange'>
+          <radio value="0" name='sex' />男
+          <text style='margin-left:50rpx;'></text>
+          <radio value='1' name='sex' />女
+        </radio-group>
+      </view>
+      <!-- <input class='form-item-value' placeholder='请输入昵称' maxlength='15' name='rePassword'></input> -->
+    </view>
+    <view class='form-register-container'>
+      <button type='primary' formType="submit" disabled='{{registerDisabled}}'>立即注册</button>
+    </view>
+  </form>
+</view>

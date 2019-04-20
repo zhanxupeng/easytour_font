@@ -1,0 +1,26 @@
+<!--路线规划列表页面-->
+<view>
+
+<view class='item-container' bindtap='itemCheck' wx:for="{{routePlanList}}" wx:for-index="idx" wx:for-item="planItem" data-index='{{idx}}'>
+  <view>
+    <image src='{{apiUrl}}{{planItem.image}}' class='avatar' mode='aspectFill'></image>
+    <view style="float:left;width:70%;text-align:center;">
+      <view>
+        <text>{{planItem.number}}个景点</text>
+      </view>
+      <slider disabled="true" step="{{sliderStyle.step}}" value="{{planItem.score}}" max="{{sliderStyle.max}}" min="{{sliderStyle.min}}" activeColor="{{sliderStyle.activeColor}}" backgroundColor="{{sliderStyle.backgroundColor}}" block-size="{{sliderStyle.blockSize}}" block-color="{{sliderStyle.blockColor}}" show-value/>
+      <view>
+        <text>{{planItem.timeDescription}}</text>
+        <text style='margin-left:50rpx;'>约{{planItem.price}}元</text>
+      </view>
+    </view>
+  </view>
+
+  <view style='clear:both;'></view>
+  <view>
+    <view>
+      <text>{{planItem.routePlan}}</text>
+    </view>
+  </view>
+</view>
+</view>

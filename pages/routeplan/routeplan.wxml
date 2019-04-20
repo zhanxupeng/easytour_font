@@ -1,0 +1,75 @@
+<!--pages/recommend/recommend.wxml-->
+<!-- 自然风光、历史遗迹、名人故居、公园乐园、建筑人文、特色街区、影视城、宗教场所、民风民俗 -->
+<view>
+  <view class='title-container'>
+    <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Crecommend-logo.png' class='title-image'></image>
+    <text class='title-content'>小安路线规划</text>
+  </view>
+  <view>
+    <view class='category-container'>
+     <view class='category-label-container'>
+        <text class='category-label'>城市:</text>
+      </view>
+      <view class='category-value-container' style='margin-left:100rpx;'>
+        <input maxlength="10" placeholder="输入城市" style='font-size:40rpx;font-weight:bold;' bindinput='bindInputCity'/>
+      </view>
+    </view>
+
+
+    <view class='category-container'>
+      <view class='category-label-container'>
+        <view class='category-label-inner-container'>
+          <text class='category-label'>类别:</text>
+        </view>
+      </view>
+      <view class='category-value-container'>
+        <checkbox-group bindchange="categoryChange">
+          <view class="check-label-default-container {{item.checked===true? 'checkbox-label-check-container':'checkbox-label-container'}}" wx:for="{{categoryList}}">
+            <label class="checkbox-label {{item.checked===true? 'label-check':''}}">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}" class='hide-checkbox' />{{item.value}}
+            </label>
+          </view>
+        </checkbox-group>
+      </view>
+    </view>
+
+    <view class='category-container'>
+      <view class='category-label-container'>
+        <view class='category-label-inner-container'>
+          <text class='category-label'>偏好:</text>
+        </view>
+      </view>
+      <view class='category-value-container'>
+        <checkbox-group bindchange="preferenceChange">
+          <view class="check-label-default-container {{item.checked===true? 'checkbox-label-check-container':'checkbox-label-container'}}" wx:for="{{preferenceList}}">
+            <label class="checkbox-label {{item.checked===true? 'label-check':''}}">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}" class='hide-checkbox' />{{item.value}}
+            </label>
+          </view>
+        </checkbox-group>
+      </view>
+    </view>
+
+
+    <view class='category-container'>
+      <view class='category-label-container'>
+        <view class='category-label-inner-container'>
+          <text class='category-label'>天气:</text>
+        </view>
+      </view>
+      <view class='category-value-container'>
+        <radio-group bindchange="weatherChange">
+          <view class="check-label-default-container {{item.checked===true? 'checkbox-label-check-container':'checkbox-label-container'}}" wx:for="{{weatherList}}">
+            <label class="checkbox-label {{item.checked===true? 'label-check':''}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" class='hide-checkbox' />{{item.value}}
+            </label>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class='button-container'>
+      <button size='mini' class='search-button' bindtap='routerPlanSearch'>查询</button>
+    </view>
+  </view>
+</view>

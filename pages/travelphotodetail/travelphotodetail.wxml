@@ -1,0 +1,38 @@
+<!--pages/travelphotodetail/travelphotodetail.wxml-->
+<!-- 旅拍详情页面 -->
+<view>
+    <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{detail.pictureList}}">
+        <swiper-item>
+          <image src="{{apiUrl+item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view style='margin:10rpx 20rpx 0;'>
+    <view>
+      <view style='float:left;border:1rpx solid #64aedf;padding:0 20rpx;margin-right:30rpx;border-radius:30rpx;'>
+        <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Chome.jpg' style='width:30rpx;height:30rpx;'></image>
+        <text style='font-size:25rpx;font-weight:200;line-height:25rpx;vertical-align: middle;'>{{detail.sceneryName}}</text>
+      </view>
+      <view style='float:left;border:1rpx solid #64aedf;padding:0 20rpx;border-radius:30rpx;'>
+        <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Clocation.jpg' style='width:30rpx;height:30rpx;'></image>
+        <text style='font-size:25rpx;font-weight:200;line-height:25rpx;vertical-align: middle;'>{{detail.city}}</text>
+      </view>
+    </view>
+    <view style='clear:both;'></view>
+    <view style='font-size:30rpx;font-weight:300;'>
+      <view>
+        <text>
+        {{detail.title}}
+        </text>
+      </view>
+      <view>
+        <text >
+        {{detail.content}}
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

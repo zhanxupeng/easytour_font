@@ -1,0 +1,151 @@
+<!--景点详情页面-->
+<view>
+
+  <view wx:for="{{routeDetailList}}" wx:for-index="idx" wx:for-item="detailItem">
+    <view style='height:60rpx;'>
+      <view style='width:60rpx;height:60rpx;border-radius:30rpx;background:#4bbef5;line-height:60rpx;vertical-align:middle;text-align:center;float:left;'>
+        <text style='font-size:50rpx;'>{{idx+1}}</text>
+      </view>
+
+      <view style='margin:10rpx 10rpx 0;height:60rpx;float:left;'>
+        <view>
+          <view style='float:left;border:1rpx solid #64aedf;padding:0 20rpx;margin-right:30rpx;border-radius:30rpx;'>
+            <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Chome.jpg' style='width:30rpx;height:30rpx;'></image>
+            <text style='font-size:25rpx;font-weight:200;line-height:25rpx;vertical-align: middle;'>{{detailItem.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{detailItem.pictureList}}">
+          <swiper-item>
+            <image src="{{apiUrl+item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view>
+
+      <view>
+        <view style='width:30%; float:left;text-align:right;height:100%;margin-top:15rpx;font-size:35rpx;color:#888;font-weight:bold;'>
+          <text>类别契合</text>
+        </view>
+        <view style='width:50%;float:left;'>
+          <slider disabled="true" step="{{sliderStyle.step}}" value="{{detailItem.categoryScore}}" max="{{sliderStyle.max}}" min="{{sliderStyle.min}}" activeColor="{{sliderStyle.activeColor}}" backgroundColor="{{sliderStyle.backgroundColor}}" block-size="{{sliderStyle.blockSize}}"
+            block-color="{{sliderStyle.blockColor}}" show-value/>
+        </view>
+      </view>
+
+      <view>
+        <view style='width:30%; float:left;text-align:right;height:100%;margin-top:15rpx;font-size:35rpx;color:#888;font-weight:bold;'>
+          <text>偏好契合</text>
+        </view>
+        <view style='width:50%;float:left;'>
+          <slider disabled="true" step="{{sliderStyle.step}}" value="{{detailItem.preferenceScore}}" max="{{sliderStyle.max}}" min="{{sliderStyle.min}}" activeColor="{{sliderStyle.activeColor}}" backgroundColor="{{sliderStyle.backgroundColor}}" block-size="{{sliderStyle.blockSize}}"
+            block-color="{{sliderStyle.blockColor}}" show-value/>
+        </view>
+      </view>
+
+      <view>
+        <view style='width:30%; float:left;text-align:right;height:100%;margin-top:15rpx;font-size:35rpx;color:#888;font-weight:bold;'>
+          <text>天气契合</text>
+        </view>
+        <view style='width:50%;float:left;'>
+          <slider disabled="true" step="{{sliderStyle.step}}" value="{{detailItem.weatherScore}}" max="{{sliderStyle.max}}" min="{{sliderStyle.min}}" activeColor="{{sliderStyle.activeColor}}" backgroundColor="{{sliderStyle.backgroundColor}}" block-size="{{sliderStyle.blockSize}}"
+            block-color="{{sliderStyle.blockColor}}" show-value/>
+        </view>
+      </view>
+
+    </view>
+    <view style='clear:both;'></view>
+
+    <view style='border:5rpx solid #eee;'></view>
+    <view>
+      <view style='width:30%;text-align:center;margin:10rpx 0;font-weight:bold;'>
+        <text style='line-height:100%;'>景点特色</text>
+      </view>
+      <view style='margin:0 20rpx;'>
+        <text style='font-size:30rpx;font-weight:300;'>{{detailItem.special}}</text>
+      </view>
+    </view>
+
+    <view style='border:5rpx solid #eee;margin-top:10rpx;'></view>
+
+    <view style='border:5rpx solid #eee;'></view>
+    <view>
+      <view style='width:30%;text-align:center;margin:10rpx 0;font-weight:bold;'>
+        <text style='line-height:100%;'>景点简介</text>
+      </view>
+      <view style='margin:0 20rpx;'>
+        <text style='font-size:30rpx;font-weight:300;'>{{detailItem.brief}}</text>
+      </view>
+    </view>
+
+    <view style='border:5rpx solid #eee;margin-top:10rpx;'></view>
+
+    <view style='border:5rpx solid #eee;'></view>
+    <view>
+      <view style='width:30%;text-align:center;margin:10rpx 0;font-weight:bold;'>
+        <text style='line-height:100%;'>游玩指南</text>
+      </view>
+      <view style='margin:0 20rpx;'>
+        <text style='font-size:30rpx;font-weight:300;'>{{detailItem.guide}}
+      </text>
+      </view>
+    </view>
+
+    <view style='border:5rpx solid #eee;'></view>
+    <view>
+      <view style='width:20%;text-align:center;margin:10rpx 0;font-weight:bold;'>
+        <text style='line-height:100%;'>门票</text>
+      </view>
+
+      <view style='margin:0 30rpx;'>
+        <view style='width:30%;float:left;font-weight:300;'>
+          <text>成人票:</text>
+        </view>
+        <view style='width:40%;float:left;text-align:right;'>
+          <text style='color:#ff8827;'>￥{{detailItem.adultTicket}}</text>
+        </view>
+      </view>
+      <view style='clear:both;'></view>
+      <view style='margin:0 30rpx;' wx:if='{{detailItem.studentTicket != null}}'>
+        <view style='width:30%;float:left;font-weight:300;'>
+          <text>学生票:</text>
+        </view>
+        <view style='width:40%;float:left;text-align:right;'>
+          <text style='color:#ff8827;'>￥{{detailItem.studentTicket}}</text>
+        </view>
+      </view>
+    </view>
+    <view>
+
+      <view style='width:30%;text-align:center;margin:10rpx 0;font-weight:bold;'>
+        <text style='line-height:100%;'>附近特色</text>
+      </view>
+
+      <view>
+        <view style='width:50%;float:left;margin-left:10%;'>
+          <view style='float:left;'>
+            <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Chead.png' style='height: 50rpx;width: 50rpx;border-radius: 25rpx;'></image>
+          </view>
+          <view style='float:left;'>
+            <text>风情酒店</text>
+          </view>
+        </view>
+        <view style='width:40%;float:left;text-align:right;'>
+          <view style='float:left;'>
+            <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Chead.png' style='height: 50rpx;width: 50rpx;border-radius: 25rpx;'></image>
+          </view>
+          <view style='float:left;'>
+            <text>特色美食</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style='clear:both;border:5rpx solid #eee;'></view>
+  </view>
+</view>

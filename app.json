@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/login/login",
+    "pages/nous/nous",
+    "pages/person/person",
+    "pages/register/register",
+    "pages/recommenditem/recommenditem",
+    "pages/recommendlist/recommendlist",
+    "pages/recommend/recommend",
+    "pages/travelphotodetail/travelphotodetail",
+    "pages/travelphoto/travelphoto",
+    "pages/mall/mall",
+    "pages/pointsshop/pointsshop",
+    "pages/dayquestion/dayquestion",
+    "pages/routeplan/routeplan",
+    "pages/routeplanitem/routeplanitem",
+    "pages/routeplanlist/routerplanlist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00ffbb",
+    "navigationBarTitleText": "安游出行",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#07C106",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "image/tab/index_un.png",
+        "selectedIconPath": "image/tab/index_on.png"
+      },
+      {
+        "pagePath": "pages/nous/nous",
+        "text": "小常识",
+        "iconPath": "image/tab/sense_un.png",
+        "selectedIconPath": "image/tab/sense_on.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人主页",
+        "iconPath": "image/tab/person_un.png",
+        "selectedIconPath": "image/tab/person_on.png"
+      }
+    ]
+  }
+}

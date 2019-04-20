@@ -1,0 +1,75 @@
+/* pages/recommend/recommend.wxss */
+/*标题*/
+.title-container{
+  height:150rpx;
+  text-align: center;
+}
+.title-image{
+  height:50rpx;
+  width:80rpx;
+}
+.title-content{
+  font-size: 40rpx;
+  font-weight:bold;
+}
+/*类别容器*/
+.category-container{
+  display: flex;
+  margin:0 0 20rpx 50rpx;
+}
+.category-label-container{
+  flex:1;
+}
+.category-value-container{
+  flex:5;
+}
+
+.category-label-inner-container{
+  margin-top: 10rpx;
+}
+
+.category-label{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+
+.check-label-default-container{
+  font-size: 40rpx;
+  margin: 10rpx;
+  float: left;
+  border-radius: 20rpx;
+}
+.checkbox-label-check-container{
+  border:1rpx solid #07c576;
+}
+.checkbox-label-container {
+  border: 1rpx solid #bbbbbb;
+}
+
+
+.label-check {
+  background: #07c576;
+  border-radius: 20rpx;
+}
+
+.checkbox-label {
+  padding: 5rpx 30rpx 5rpx 30rpx;
+}
+
+.hide-checkbox {
+  display: none;
+}
+.button-container{
+  text-align: center;
+}
+.search-button{
+  font-size: 38rpx !important;
+  color: black;
+  background: #ff8827;
+  width:200rpx;
+  height: 70rpx;
+  text-align: center;
+  vertical-align: middle;
+}

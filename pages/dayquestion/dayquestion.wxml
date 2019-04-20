@@ -1,0 +1,19 @@
+<!--pages/dayquestion/dayquestion.wxml-->
+<view>
+  <view>
+    <image src='{{apiUrl}}/image/show.do?imagePath=pictures%5Ccommon%5Cquestion-day.jpg' class='question-image'></image>
+  </view>
+  <view class='question-title'>
+    <text>{{question}}</text>
+  </view>
+  <view>
+    <radio-group bindchange="radioChange">
+      <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+        <text>{{item.value}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  <view class='button-container'>
+    <button type='primary' bindtap='answerQuestion'>提交</button>
+  </view>
+</view>

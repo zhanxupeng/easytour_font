@@ -1,0 +1,41 @@
+/* pages/pointsshop/pointsshop.wxss */
+swiper {
+  width: 100%;
+  height: 340rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 100%;
+}
+.title-container{
+  text-align: center;
+}
+.title-image{
+  width: 100%;
+}
+.mypoints-container{
+  text-align: right;
+}
+.my-points-num{
+  display: inline;
+  color: red;
+}
+.divider-line{
+  height: 5rpx;
+  background: #aaa;
+}
+.card-title-container{
+  text-align: center;
+}
+.card-shop-container{
+  width:100%;
+}
+.card-shop-item-container{
+  margin:30rpx 2% 30rpx 2%;
+  width:29%;
+  float: left;
+}
+.card-shop-item-title{
+  font-size: 25rpx;
+}

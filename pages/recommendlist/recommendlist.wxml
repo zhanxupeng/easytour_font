@@ -1,0 +1,13 @@
+<!--pages/recommendlist/recommendlist.wxml-->
+<view>
+  <view class='item-container' bindtap='clickItem' wx:for='{{recommendList}}' wx:for-index="idx" wx:for-item="item" data-index='{{idx}}'>
+    <image src='{{apiUrl+item.image}}' class='avatar' mode='aspectFill'></image>
+    <view class='item-introduce-container'>
+      <view class='item-tntroduce-name-container'>
+        <text>{{item.sceneryName}}</text>
+      </view>
+      <slider disabled="true" step="{{sliderStyle.step}}" value="{{item.averageScore}}" max="{{sliderStyle.max}}" min="{{sliderStyle.min}}" activeColor="{{sliderStyle.activeColor}}" backgroundColor="{{sliderStyle.backgroundColor}}" block-size="{{sliderStyle.blockSize}}" block-color="{{sliderStyle.blockColor}}" show-value
+      />
+    </view>
+  </view>
+</view>

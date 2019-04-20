@@ -1,0 +1,43 @@
+<!--热门旅拍-->
+<view>
+  <view class='travel-title-container'>
+    <text class='travel-title'>热门旅拍</text>
+  </view>
+  <scroll-view scroll-x class="scroll-x">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class="radio-label-default-container {{item.checked===true? 'radio-label-check-container':'radio-label-container'}}" wx:for="{{items}}">
+        <label class="radio" class="label-label">
+          <radio value="{{item.name}}" checked="{{item.checked}}" class='hide-radio' /> {{item.value}}
+        </label>
+      </view>
+    </radio-group>
+  </scroll-view>
+  <view class='travel-photo-list'>
+  
+    <view class='travel-photo-item' bindtap='itemCheck' wx:for="{{travelPhotoList}}" wx:for-index="idx" wx:for-item="travelPhotoItem"
+     data-index='{{idx}}'>
+      <image src='{{apiUrl+travelPhotoItem.image}}' class='travel-photo-image' mode='aspectFit'></image>
+      <view>
+        <view class='travel-photo-content-container'>
+          <view class='travel-photo-content-description-container'>
+            <text class='travel-photo-content-description'>{{travelPhotoItem.brief}}</text>
+          </view>
+          <view>
+          </view>
+          <view class='travel-photo-content-customer'>
+            <view class='travel-photo-content-image-container'>
+              <image src='{{apiUrl+travelPhotoItem.headPicture}}' class='travel-photo-content-image' mode='scaleToFill'></image>
+            </view>
+            <view class='travel-photo-content-customer-name-container '>
+              <text class='travel-photo-content-customer-name'>{{travelPhotoItem.nickName}}</text>
+            </view>
+            <view class='travel-photo-content-customer-praise-container'>
+              <text>赞</text>
+              <text>10</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
